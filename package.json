@@ -1,0 +1,26 @@
+{
+  "name": "velox-saas-engine",
+  "private": true,
+  "packageManager": "bun@1.0.0",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:local": "APP_ENV=local turbo run dev",
+    "dev:dev": "APP_ENV=dev dotenv -e .env.dev -- turbo run dev",
+    "dev:staging": "APP_ENV=staging dotenv -e .env.staging -- turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:push": "turbo run db:push",
+    "db:studio": "turbo run db:studio"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^11.0.0",
+    "prettier": "^3.0.0",
+    "turbo": "latest",
+    "typescript": "^5.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
